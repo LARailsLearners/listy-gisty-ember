@@ -1,0 +1,6 @@
+<ol>
+  {{#each model as | gist | }}
+  {{log gist}}
+  <li><a href="{{gist.html_url}}">{{gist.html_url}}</a> </li>
+  {{/each}}
+</ol>

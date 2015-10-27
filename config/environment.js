@@ -19,6 +19,29 @@ module.exports = function(environment) {
     }
   };
 
+// config/environment.js
+ENV['simple-auth'] = {
+  authorizer: 'simple-auth-authorizer:jwt',
+  authenticationRoute: 'index',
+  routeAfterAuthentication: 'protected',
+  routeIfAlreadyAuthenticated: 'protected'
+}
+
+ENV['auth0-ember-simple-auth'] = {
+  clientID: "iCkM8cg8o1FodvTpiXENHc7FA2gDbENj",
+  domain: "listygisty.auth0.com"
+}
+
+// config/environment.js
+
+ENV['contentSecurityPolicy'] = {
+    'font-src': "'self' data: https://*.auth0.com",
+    'style-src': "'self' 'unsafe-inline'",
+    'script-src': "'self' 'unsafe-eval' https://*.auth0.com",
+    'img-src': '*.gravatar.com *.wp.com data:',
+    'connect-src': "'self' http://localhost:* https://listygisty.auth0.com"
+  };
+  
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
